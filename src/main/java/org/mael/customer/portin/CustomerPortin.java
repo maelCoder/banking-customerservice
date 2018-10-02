@@ -8,11 +8,11 @@ public interface CustomerPortin {
 
 	List<Customer> findAllCustomers();
 
-	Customer findCustomerById(Long id);
+	Customer findCustomerById(String id);
 
 	Customer addCustomer(Customer customer);
 
-	void deleteCustomer(Long id);
+	void deleteCustomer(String id);
 
 	void updateCustomer(Customer customer);
 

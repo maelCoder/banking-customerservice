@@ -29,19 +29,20 @@ public class InMemoryCustomerRepo implements CustomerPortout {
 	}
 
 	@Override
-	public Customer findById(Long id) {
+	public Customer findById(String id) {
 		return this.customers.stream().filter(c -> c.getId().equals(id)).findFirst().orElse(null);
 	}
 
 	@Override
 	public Customer add(Customer p) {
-		p.setId(this.id++);
+		Long id = this.id++;
+		p.setId(id.toString());
 		this.customers.add(p);
 		return p;
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void delete(String id) {
 		Customer customer = findById(id);
 		if (customer != null) {
 			this.customers.remove(customer);

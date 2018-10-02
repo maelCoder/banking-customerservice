@@ -21,7 +21,7 @@ public class MongoCustomerRepoAdapter implements CustomerPortout {
 	}
 
 	@Override
-	public Customer findById(Long id) {
+	public Customer findById(String id) {
 		return this.repo.findById(id).orElse(null);
 	}
 
@@ -31,7 +31,7 @@ public class MongoCustomerRepoAdapter implements CustomerPortout {
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void delete(String id) {
 		this.repo.deleteById(id);
 	}
 

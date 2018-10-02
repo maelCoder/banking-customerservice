@@ -22,7 +22,7 @@ public class CustomerService implements CustomerPortin {
 	}
 
 	@Override
-	public Customer findCustomerById(Long id) {
+	public Customer findCustomerById(String id) {
 		return this.customerRepo.findById(id);
 	}
 
@@ -32,7 +32,7 @@ public class CustomerService implements CustomerPortin {
 	}
 
 	@Override
-	public void deleteCustomer(Long id) {
+	public void deleteCustomer(String id) {
 		this.customerRepo.delete(id);
 	}
 

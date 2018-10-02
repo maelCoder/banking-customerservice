@@ -29,7 +29,7 @@ public class CustomerRestAdapter {
 	}
 
 	@GetMapping("/{id}")
-	Customer findCustomerById(@RequestParam("id") Long id) {
+	Customer findCustomerById(@RequestParam("id") String id) {
 		return this.customerService.findCustomerById(id);
 	}
 
@@ -39,7 +39,7 @@ public class CustomerRestAdapter {
 	}
 
 	@DeleteMapping("/{id}")
-	void deleteCustomer(@RequestParam("id") Long id) {
+	void deleteCustomer(@RequestParam("id") String id) {
 		this.customerService.deleteCustomer(id);
 	}
 

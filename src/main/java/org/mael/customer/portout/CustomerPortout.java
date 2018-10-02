@@ -8,11 +8,11 @@ public interface CustomerPortout {
 
 	List<Customer> findAll();
 
-	Customer findById(Long id);
+	Customer findById(String id);
 
 	Customer add(Customer p);
 
-	void delete(Long id);
+	void delete(String id);
 
 	void update(Customer p);
 
