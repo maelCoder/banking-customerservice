@@ -1,4 +1,4 @@
 spring:
   profiles:
     active:
-    - "in-memory-db"
+    - "mongo-db"
