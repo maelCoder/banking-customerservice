@@ -2,6 +2,7 @@ package org.mael.customer.adapter.portout;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.mael.customer.model.Customer;
 import org.mael.customer.portout.CustomerPortout;
@@ -52,6 +53,20 @@ public class InMemoryCustomerRepo implements CustomerPortout {
 		Customer customer = findById(p.getId());
 		customer.setFirstName(p.getFirstName());
 		this.customers.set(this.customers.indexOf(customer), customer);
+	}
+
+	@Override
+	public List<Customer> findByLastName(String lastName) {
+		return this.customers.stream()//
+				.filter(c -> c.getLastName().equals(lastName))//
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public List<Customer> findByAgeGeaterThan(int age) {
+		return this.customers.stream()//
+				.filter(c -> c.getAge()>age)//
+				.collect(Collectors.toList());
 	}
 
 }

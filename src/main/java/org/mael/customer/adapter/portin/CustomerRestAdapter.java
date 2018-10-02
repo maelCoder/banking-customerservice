@@ -47,4 +47,14 @@ public class CustomerRestAdapter {
 	void updateCustomer(@RequestBody Customer customer) {
 		this.customerService.updateCustomer(customer);
 	}
+	
+	@GetMapping("/lastname/{lastName}")
+	public List<Customer> findByLastName(@RequestParam("lastName") String lastName) {
+		return this.customerService.findByLastName(lastName);
+	}
+	
+	@GetMapping("/age/{age}")
+	public List<Customer> findByAgeGreaterThan(@RequestParam("age") int age) {
+		return this.customerService.findByAgeGreaterThan(age);
+}
 }

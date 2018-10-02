@@ -9,9 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CustomerService implements CustomerPortin {
-	
+
 	private final CustomerPortout customerRepo;
-	
 
 	public CustomerService(CustomerPortout customerRepo) {
 		this.customerRepo = customerRepo;
@@ -34,14 +33,22 @@ public class CustomerService implements CustomerPortin {
 
 	@Override
 	public void deleteCustomer(Long id) {
-		 this.customerRepo.delete(id);
-		
+		this.customerRepo.delete(id);
 	}
 
 	@Override
 	public void updateCustomer(Customer customer) {
-		 this.customerRepo.update(customer);
-		
+		this.customerRepo.update(customer);
+	}
+	
+	@Override
+	public List<Customer> findByLastName(String lastName){
+		return this.customerRepo.findByLastName(lastName);
+	}
+
+	@Override
+	public List<Customer> findByAgeGreaterThan(int age){
+		return this.customerRepo.findByAgeGeaterThan(age);
 	}
 
 }

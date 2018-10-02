@@ -15,4 +15,8 @@ public interface CustomerPortout {
 	void delete(Long id);
 
 	void update(Customer p);
+
+	List<Customer> findByLastName(String lastName);
+
+	List<Customer> findByAgeGeaterThan(int age);
 }
