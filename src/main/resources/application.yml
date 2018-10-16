@@ -1,4 +1,14 @@
 spring:
   profiles:
     active:
-    - "mongo-db"
+    - mongo-db
+  application:
+    name: customer-service
+server:
+  port: ${PORT:8080}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
